@@ -52,7 +52,7 @@ const deleteGoal = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error("Goal not Found");
   }
-  await goal.remove();
+  await goal.deleteOne();
   res.status(200).json({ id: req.params.id });
 });
 
